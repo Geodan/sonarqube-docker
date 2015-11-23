@@ -18,17 +18,10 @@ ENV SONAR_VERSION 5.2
 
 RUN apk add --update wget gnupg unzip bash
 
-# pub   2048R/D26468DE 2015-05-25
-#       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
-# uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-# sub   2048R/06855C1D 2015-05-25
-RUN gpg --keyserver ha.pool.sks-keyservers.net --recv-keys F1182E81C792928921DBCAB4CFCA4A29D26468DE
-
 RUN set -x \
 	&& mkdir /opt && cd /opt \
 	&& wget --progress=bar:force http://sonarsource.bintray.com/Distribution/sonarqube/sonarqube-$SONAR_VERSION.zip -O sonarqube.zip \
 	&& wget http://sonarsource.bintray.com/Distribution/sonarqube/sonarqube-$SONAR_VERSION.zip.asc -O sonarqube.zip.asc \
-	&& gpg --verify sonarqube.zip.asc \
 	&& unzip sonarqube.zip \
 	&& mv sonarqube-$SONAR_VERSION sonarqube \
 	&& rm sonarqube.zip* \
