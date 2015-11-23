@@ -1,3 +1,4 @@
+
 FROM frolvlad/alpine-oraclejdk8:latest
 
 MAINTAINER Jan Boonen <jan.boonen@geodan.nl>
