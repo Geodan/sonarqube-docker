@@ -27,8 +27,8 @@ RUN set -x \
 	&& rm sonarqube.zip* \
 	&& rm -rf $SONARQUBE_HOME/bin/* \
 	&& cd sonarqube/extensions/plugins \
-	&& wget --progress=bar:force http://sonarsource.bintray.com/Distribution/sonar-javascript-plugin/sonar-javascript-plugin-2.14.jar \
-	-O sonar-javascript-plugin-2.14.jar \
+	&& wget --progress=bar:force http://sonarsource.bintray.com/Distribution/sonar-javascript-plugin/sonar-javascript-plugin-2.13.jar \
+	-O sonar-javascript-plugin-2.13.jar \
 	&& wget --progress=bar:force http://sonarsource.bintray.com/Distribution/sonar-ldap-plugin/sonar-ldap-plugin-1.5.jar \
 	-O sonar-ldap-plugin-1.5.jar \
 	&& wget --progress=bar:force http://sonarsource.bintray.com/Distribution/sonar-resharper-plugin-2.0.jar \
